@@ -1,0 +1,107 @@
+/* Reset and Background */
+body {
+  margin: 0;
+  padding: 0;
+  background: #0d0d0d;
+  overflow: hidden;
+  font-family: Arial, sans-serif;
+}
+
+/* Main Layout */
+.circle-container {
+  position: relative;
+  width: 100vw;
+  height: 100vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.center-logo {
+  position: absolute;
+  width: 80px;
+  height: 80px;
+  z-index: 10;
+}
+
+/* Circle of Icons */
+.ai-icons {
+  position: absolute;
+  width: 90vw;
+  height: 90vw;
+  max-width: 400px;
+  max-height: 400px;
+  animation: rotate 30s linear infinite;
+}
+
+/* Icons */
+.icon {
+  position: absolute;
+  width: 50px;
+  height: 50px;
+  cursor: pointer;
+}
+.icon img {
+  width: 100%;
+  height: 100%;
+  border-radius: 50%;
+  transition: transform 0.3s;
+}
+.icon:hover img {
+  transform: scale(1.2);
+}
+
+/* Loader Spinner */
+.loader {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100vw;
+  height: 100vh;
+  background: #0d0d0d;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  z-index: 100;
+  display: none;
+}
+.loader::after {
+  content: "";
+  width: 40px;
+  height: 40px;
+  border: 5px solid #00ffcc;
+  border-top: 5px solid transparent;
+  border-radius: 50%;
+  animation: spin 1s linear infinite;
+}
+
+/* Animations */
+@keyframes spin {
+  to {
+    transform: rotate(360deg);
+  }
+}
+@keyframes rotate {
+  from {
+    transform: rotate(0deg);
+  }
+  to {
+    transform: rotate(360deg);
+  }
+}
+
+/* Responsive */
+@media (max-width: 600px) {
+  .center-logo {
+    width: 70px;
+    height: 70px;
+  }
+  .icon {
+    width: 45px;
+    height: 45px;
+  }
+  .ai-icons {
+    width: 85vw;
+    height: 85vw;
+  }
+}
